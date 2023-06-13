@@ -1,0 +1,17 @@
+package com.example.postman.service;
+
+import java.util.List;
+
+import com.example.postman.module.Employee;
+
+public interface EmployeeService {
+	
+	Employee addEmployee(Employee E);
+	Employee GetByID(int eid);
+	List<Employee> empbyDesg(String Designation);
+	List<Employee> emplessSal(Double sal);
+//	Employee GetByDesignation(Employee E);
+//	Employee BylessthenSal(Employee E);
+//	
+
+}

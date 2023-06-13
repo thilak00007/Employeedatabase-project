@@ -1,0 +1,29 @@
+package com.example.postman.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.postman.module.Employee;
+import com.example.postman.service.EmployeeService;
+
+@RestController
+public class EmployeeController {
+	@Autowired
+	EmployeeService ser;
+	@PostMapping("/addEmployee")
+	ResponseEntity<Employee> addEmployee(@RequestBody Employee e){
+		return new ResponseEntity<Employee>(ser.addEmployee(e),HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/GetById")
+	ResponseEntity<Employee> getByEmployee(@RequestBody Employee E){
+		return new ResponseEntity<Employuee>(ser.GetByID(E), HttpStatus.CREATED);
+	}
+	
+	
+}

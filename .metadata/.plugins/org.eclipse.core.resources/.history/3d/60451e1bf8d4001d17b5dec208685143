@@ -1,0 +1,14 @@
+package com.th.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+// localhost:9091
+@Controller
+public class DemoController {
+//	/localhost:9091/demo
+	@RequestMapping("/demo")
+	void display() {
+		System.out.println("Hello Web");
+	}
+
+}

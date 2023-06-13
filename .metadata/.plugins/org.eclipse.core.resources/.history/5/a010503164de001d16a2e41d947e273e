@@ -1,0 +1,13 @@
+package com.example.postman.service;
+
+import com.example.postman.module.Employee;
+
+public interface EmployeeService {
+	
+	Employee addEmployee(Employee E);
+	Employee GetByID(Employee eid);
+//	Employee GetByDesignation(Employee E);
+//	Employee BylessthenSal(Employee E);
+//	
+
+}

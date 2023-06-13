@@ -1,0 +1,41 @@
+package com.example.postman.serviceimpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.postman.module.Employee;
+import com.example.postman.repo.EmployeeRepo;
+import com.example.postman.service.EmployeeService;
+
+
+@Service
+public class EmployyeServiceImpl implements EmployeeService{
+	@Autowired
+	EmployeeRepo repo;
+
+	@Override
+	public Employee addEmployee(Employee e) {
+		
+		return repo.save(e);
+	}
+
+	@Override
+	public Employee GetByID(Employee E) {
+		return repo.getById(E);
+	}
+
+//	@Override
+//	public Employee BylessthenSal(Employee E) {
+//		return repo.;
+//	}
+//
+//	@Override
+//	public Employee GetByDesignation(Employee E) {
+//		if(Employee.getEid()!=null) {
+//			
+//		}
+//		
+//		return null;
+//	}
+
+}

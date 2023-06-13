@@ -1,0 +1,46 @@
+package com.example.StudentDB;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class StudentController {
+
+
+	@Autowired
+	StudentRepo repo;
+
+	@RequestMapping("details")
+	String detailsApi()
+	{
+		return "details.jsp";
+
+	}
+	
+	@RequestMapping("saveStudent")
+	String saveStudent(Student s)
+	{
+		repo.save(s);
+
+		return "details.jsp";
+	}
+	@RequestMapping("showstudent")
+	String getStudent(HttpSession h1 ,Integer sid) 
+	{
+		Student s=repo.findById(sid).orElse(null);
+		h1.setAttribute("student", s);
+		//		System.out.println(s);
+		return "Techers.jsp";
+	}
+	@RequestMapping("techerdetails")
+	String validateUser(String name, String loc) {
+		if(name.equals("techerravi@gamil.com")&&loc.equals("banglore")) {
+			return "Techer.jsp";
+		}
+		return "fees.jsp";
+
+	}
+}
